@@ -11,10 +11,14 @@ const numbersAll = populationStrings.map((str) => {
   return parseFloat(cleanStr);
 });
 
-const total = numbersAll.reduce((current, acc) => current + acc, 0);
-const average = Math.floor(
-  numbersAll.length > 0 ? total / numbersAll.length : 0,
+const sum = numbersAll.reduce((current, acc) => current + acc, 0);
+const averageRow = Math.floor(
+  numbersAll.length > 0 ? sum / numbersAll.length : 0,
 );
+
+const total = sum.toLocaleString();
+const average = averageRow.toLocaleString();
+
 
 const totalPopulation = document.querySelector('.total-population');
 const averagePopulation = document.querySelector('.average-population');
